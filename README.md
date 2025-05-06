@@ -1,62 +1,95 @@
 
-# Project Overview: EmojiWave Project: Real-Time Hand Gesture Recognition with Emoji Feedback
-This project was built during an 8-day sprint in the Saudi Digital Academy’s Data Science Bootcamp, in partnership with Le Wagon.
+# ✋ EmojiWave: Transforming Hand Gestures into Emojis
 
-It detects hand gestures from a webcam or uploaded image, predicts the gesture using a custom-trained CNN model, and displays the corresponding emoji on-screen using Streamlit.
+## 📋 Project Overview
 
-Our project is an intelligent interactive system that recognizes hand gestures in real-time using a camera and instantly displays the corresponding emoji—no touch or voice required.
+**EmojiWave** is a web application that uses computer vision to detect hand gestures in real-time. It then translates these gestures into corresponding emojis using a custom-trained Convolutional Neural Network (CNN). The app leverages **Streamlit** for an interactive user experience, enabling users to either upload an image or use their webcam for real-time gesture recognition.
 
-# Why This Project Matters
-Interacting with machines should be natural, inclusive, and touchless when needed. Our system offers an alternative interaction model that is not only fun, but potentially life changing for users with accessibility needs, presenters, and more.
+## 🎬Live Demo
+ Experience EmojiWave in Action: (https://emojiwaveapp.streamlit.app/)
 
-# Team Members
-- Noura Alzahrani
-- Norah Alharbi
-- Amal Alahmadi
-- Mohammed Albaijan
-- Yousif Alnasser
+## 🚀 Key Features
+- **Real-time emoji feedback:** Detects hand gestures via webcam or uploaded images and displays corresponding emojis.
+- **Interactive experience:** Fun and personal interaction without the need for touch or voice inputs.
+- **Portable deployment:** Easily deployed via Docker for seamless use across different environments.
 
-# Tech Stack
-- Python
-- TensorFlow
-- OpenCV
-- Streamlit
-- Jupyter / Google Colab
-- Docker
-- VS Code
+## 🔧 Tech Stack
+- **Python**
+- **TensorFlow** (for deep learning)
+- **OpenCV** (for computer vision)
+- **Streamlit** (for interactive web interface)
+- **Jupyter / Google Colab** (for model development)
+- **Docker** (for containerized deployment)
+- **VS Code** (for development)
 
-#Challenges & Solutions
-#1. Low Accuracy with Camera Input
-- Problem: Model failed to predict correctly using real-time camera images.
-- Cause: Camera input looked different from training data.
-- Solution: Built 3 separate preprocessing pipelines for:
-  - Training data
-  - Uploaded images
-  - Webcam frames
+## 📸 How It Works
+1. **Upload an image** or use your **webcam** for gesture recognition.
+2. The system processes the image, detecting hand gestures.
+3. The recognized gesture is matched to an emoji and displayed on the screen.
 
-#2.Choosing the Right Model
-- We tested both pretrained and custom models.
-- Our best-performing model was built from scratch, reaching 99% accuracy after tuning.
 
-#3.Time Constraints
-- Project duration: 8 days only.
-- Each team member worked on specific tasks with high coordination.
+## 📂 Project Structure
 
-#Features
-- Upload an image OR use your webcam live
-- Real-time emoji overlay based on predicted gesture
-- Fun, personal experience
-- Portable deployment via Docker
+```
+EmojiWave/
+├── api/                         # API files
+│   ├── fast.py                  # FastAPI application server
+│   ├── model.py                 # Model architecture
+│   └── preprocessor.py          # Data preprocessing functions
+├── models/                      # Directory for trained models
+│   └── final_model_acc99.h5     # Final trained model with 99% accuracy
+├── notebooks/                   # Jupyter notebooks
+│   ├── Baseline_Model.ipynb     # Notebook for baseline model training
+│   ├── EDA.ipynb                # Exploratory Data Analysis notebook
+│   ├── Preprocess.ipynb         # Notebook for data preprocessing
+│   └── The Best Model.ipynb     # Notebook for fine-tuning the best model
+├── outputs/plots/               # Directory for storing model output
+│    ├── baseline.jpeg           # Visualization of baseline model results
+│    └── best_model.jpeg         # Visualization of best model results
+├── streamlit_app/               # Directory for the Streamlit app
+│   ├── .streamlit/              # Streamlit configuration
+│   │   └── config.toml          # Configuration file for Streamlit app
+│   ├── pages/                   # Subdirectory for Streamlit app pages
+│   │   ├── CameraInput.py       # Page for capturing input from camera
+│   │   ├── MoreResources.py     # Page for additional resources
+│   │   └── UploadImage.py       # Page for uploading an image
+│   ├── EmojiWaveLogo.gif        # GIF logo
+│   └── Home.py                  # Main homepage of the Streamlit app
+├── .gitignore                   # Git ignore rules
+├── project_summary.txt          # Summary of the project
+├── README.md                    # Project documentation
+└── requirements.txt             # List of project dependencies
+```
 
-# Future Enhancements
-- Assign functionality to gestures (volume, slides, etc.)
-- Transparent/no UI mode
-- Multi-user recognition
-- Wider gesture/emotion recognition
 
-# How to Run
-1. Clone the repo
-2. Install requirements
-3. Launch Streamlit:
-```bash
-streamlit run app.py
+
+## 💻 How to Run the Project Locally
+
+To run the app on your local machine, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/noura-alzahrani/EmojiWave.git
+   ```
+
+2. Install required dependencies:
+   ```bash
+   cd EmojiWave
+   pip install -r requirements.txt
+   ```
+
+3. Launch the app using Streamlit:
+   ```bash
+   streamlit run streamlit_app/app.py
+   ```
+
+---
+
+## 👥 Acknowledgments
+
+Shoutout to my incredible team for making EmojiWave happen:
+
+- [**Mohammed Albaijan**](https://github.com/moalb08)
+- [**Norah Alharbi**](https://github.com/NourahNH)
+- [**Amal Alahmadi**](https://github.com/amal-Stu)
+- [**Yousif Alnasser**](https://github.com/ai-yousif)
